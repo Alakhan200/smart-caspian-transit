@@ -1,0 +1,48 @@
+{
+  "id": "SCT-001",
+  "cargo": "Комплектующие",
+  "weightTonnes": 12,
+  "origin": "Москва",
+  "destination": "Энзели",
+  "status": "at_port",
+  "currentLocation": "Порт Астрахань",
+  "updatedAt": "2026-11-12T18:00:00Z",
+  "scheduledArrival": "2026-11-14T18:00:00Z",
+  "route": [
+    {
+      "from": "Москва",
+      "to": "Астрахань",
+      "transport": "rail",
+      "status": "completed"
+    },
+    {
+      "from": "Астрахань",
+      "to": "Энзели",
+      "transport": "sea",
+      "status": "pending"
+    }
+  ],
+  "co2Kg": 840,
+  "alternative": {
+    "id": "ALT-001",
+    "title": "Через порт Махачкала",
+    "demoExtraHours": 10,
+    "costDifferencePercent": 12,
+    "co2Kg": 960
+  },
+  "customs": {
+    "status": "missing_documents",
+    "documents": [
+      {
+        "type": "invoice",
+        "title": "Инвойс",
+        "provided": true
+      },
+      {
+        "type": "packing_list",
+        "title": "Упаковочный лист",
+        "provided": false
+      }
+    ]
+  }
+}

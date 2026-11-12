@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Caspian Transit</title>
+  <link rel="stylesheet" href="./style.css">
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./interface.css">
+  <link rel="stylesheet" href="./appearance.css">
+  <link rel="stylesheet" href="./clearance.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Smart Caspian Transit</h1>
+      <p>Мониторинг мультимодальных перевозок</p>
+    </header>
+
+    <form id="conditions-form" class="card">
+  <h2>Симулятор условий</h2>
+
+  <p class="muted">
+    Сравни условия текущего и альтернативного маршрутов.
+    Все значения вводятся для демонстрации.
+  </p>
+
+  <h3>Астрахань — текущий маршрут</h3>
+
+  <div class="fields">
+    <label for="wind-speed">
+      Ветер, м/с
+      <input
+        id="wind-speed"
+        type="number"
+        min="0"
+        max="100"
+        step="0.1"
+        value="18"
+        required
+      >
+    </label>
+
+    <label for="port-load">
+      Загрузка порта, %
+      <input
+        id="port-load"
+        type="number"
+        min="0"
+        max="100"
+        step="0.1"
+        value="90"
+        required
+      >
+    </label>
+  </div>
+
+  <h3>Махачкала — альтернативный маршрут</h3>
+
+  <div class="fields">
+    <label for="alternative-wind-speed">
+      Ветер, м/с
+      <input
+        id="alternative-wind-speed"
+        type="number"
+        min="0"
+        max="100"
+        step="0.1"
+        value="5"
+        required
+      >
+    </label>
+
+    <label for="alternative-port-load">
+      Загрузка порта, %
+      <input
+        id="alternative-port-load"
+        type="number"
+        min="0"
+        max="100"
+        step="0.1"
+        value="40"
+        required
+      >
+    </label>
+  </div>
+
+  <button id="calculate-button" type="submit">
+    Сравнить маршруты
+  </button>
+</form>
+    
+    <section class="card map-card">
+  <h2>Карта перевозки</h2>
+
+  <p class="muted">
+    Серый — пройденный ж/д участок.
+    Синий — планируемый морской участок.
+    Оранжевый пунктир — альтернатива.
+  </p>
+
+  <div
+    id="map"
+    aria-label="Карта маршрута Москва — Астрахань — Энзели"
+  ></div>
+
+  <small>
+    Линии показывают схему сообщения между городами,
+    а не точные пути движения. Положение груза демонстрационное.
+  </small>
+</section>
+
+    <p id="loading" role="status" aria-live="polite">
+      Загружаем данные…
+    </p>
+
+    <section id="shipment" class="card" hidden>
+      <div class="cargo-header">
+        <div>
+          <h2 id="cargo-title"></h2>
+          <p id="cargo-info" class="muted"></p>
+        </div>
+
+        <span id="risk-badge" class="badge"></span>
+      </div>
+
+      <h3>Маршрут</h3>
+      <p id="route"></p>
+
+      <div class="metrics">
+        <div class="metric">
+          <h3>Плановое прибытие</h3>
+          <p id="scheduled-arrival"></p>
+        </div>
+
+        <div class="metric">
+          <h3>С учётом задержки</h3>
+          <p id="arrival"></p>
+        </div>
+
+        <div class="metric">
+          <h3>Выбросы CO₂</h3>
+          <p id="co2"></p>
+        </div>
+      </div>
+
+      <h3>Прогноз задержки</h3>
+      <p id="prediction"></p>
+
+      <button
+        id="alternative-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="alternative"
+      >
+        Показать альтернативу
+      </button>
+
+      <div id="alternative" hidden>
+        <h3 id="alternative-title"></h3>
+        <p id="alternative-comparison"></p>
+        <p id="alternative-arrival"></p>
+        <p id="alternative-assumption" class="muted"></p>
+      </div>
+
+      <h3>Документы</h3>
+      <ul id="documents"></ul>
+
+      <p class="muted">
+        Проверка комплектности документов не означает разрешение таможни.
+      </p>
+
+      <small>
+        Демонстрационные данные. Прогноз основан на условных правилах,
+        стоимость и CO₂ — заданные оценки сценария.
+      </small>
+    </section>
+  </main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="./emissions.js"></script>
+<script src="./ferry.js"></script>
+<script src="./app.js"></script>
+<script src="./map.js"></script>
+<script src="./customs.js"></script>
+<script src="./history.js"></script>
+<script src="./interface.js"></script>
+<script src="./clearance.js"></script>
+<script src="./twin.js"></script>
+</body>
+</html>

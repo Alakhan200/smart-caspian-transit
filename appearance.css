@@ -1,0 +1,661 @@
+/* Подключается после style.css и interface.css. */
+
+:root {
+  color-scheme: dark;
+  color: #e0e5e2;
+  background: #151918;
+  font-family: "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #151918;
+}
+
+/* Верхняя панель */
+
+.appbar {
+  background: #191e1c;
+  border-color: #2a322e;
+}
+
+.brand {
+  color: #e3eae4;
+  font-weight: 650;
+}
+
+.brand-mark {
+  background: #8faa99;
+  color: #17221c;
+  border-radius: 9px;
+}
+
+.brand-light {
+  color: #85968a;
+}
+
+.appbar-caption {
+  color: #89958d;
+}
+
+.demo-label {
+  color: #bcb6a0;
+  border-color: #3f4036;
+  background: #252820;
+  border-radius: 6px;
+}
+
+/* Боковая панель */
+
+.cargo-sidebar {
+  background: #191e1c;
+  border-color: #2a322e;
+  padding-top: 32px;
+}
+
+.eyebrow {
+  color: #839188;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.cargo-sidebar h2 {
+  color: #dce4dd;
+  font-weight: 500;
+}
+
+.count {
+  border-color: #3b463e;
+  color: #94a598;
+  border-radius: 5px;
+}
+
+.selected-cargo {
+  background: #242d27;
+  border: 1px solid #3e5143;
+  padding: 18px 14px;
+  border-radius: 12px;
+}
+
+.cargo-row strong {
+  font-size: 14px;
+  color: #e3eae3;
+}
+
+.cargo-tag {
+  color: #a9baad;
+}
+
+.cargo-tag[data-risk="high"] {
+  color: #d5b381;
+}
+
+.selected-cargo p {
+  color: #d1dbd2;
+  font-size: 14px;
+}
+
+.selected-cargo > .muted {
+  color: #94a398;
+  font-size: 12px;
+}
+
+.mini-route {
+  margin-top: 25px;
+}
+
+.mini-route > span {
+  color: #98a79c;
+  border-color: #48594b;
+  font-size: 13px;
+  padding-bottom: 25px;
+}
+
+.mini-route > span::before {
+  border-color: #6c8070;
+  background: #242d27;
+}
+
+.mini-route .current-stop {
+  color: #e2eade;
+  font-weight: 500;
+}
+
+.mini-route .current-stop::before {
+  background: #c8b486;
+  border-color: #c8b486;
+  box-shadow: 0 0 0 4px #343c2f;
+}
+
+.mini-route small {
+  color: #94a392;
+  font-size: 11px;
+}
+
+.sidebar-note p {
+  color: #a2afa4;
+  font-size: 14px;
+}
+
+.sidebar-note small {
+  color: #7e8b81;
+}
+
+/* Рабочая область */
+
+.workspace-body {
+  padding-top: 34px;
+}
+
+.page-heading {
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #e5eae5;
+  font-weight: 500;
+  font-size: 29px;
+  letter-spacing: -0.6px;
+}
+
+h1 span {
+  color: #738276;
+}
+
+#open-simulation {
+  background: #242d27;
+  color: #c7d6c9;
+  border-color: #3b4b3f;
+  border-radius: 9px;
+  padding: 12px 16px;
+}
+
+#open-simulation:hover {
+  background: #303d33;
+}
+
+.view-nav {
+  border-color: #303a33;
+  gap: 30px;
+  margin-bottom: 24px;
+}
+
+.view-nav button {
+  color: #9aa99e;
+  font-size: 13px;
+  font-weight: 400;
+  padding-bottom: 16px;
+}
+
+.view-nav button:hover {
+  color: #e0e8de;
+  background: transparent;
+}
+
+.view-nav button[aria-current] {
+  color: #d7e3d7;
+  border-bottom-color: #99b49d;
+}
+
+.work-grid {
+  gap: 24px;
+}
+
+.card,
+#shipment {
+  background: #1e2521;
+  border: 1px solid #303b33;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 7%);
+}
+
+.view-panel > h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #dce5dc;
+}
+
+.view-panel > .muted {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.muted {
+  color: #98a69c;
+}
+
+h3 {
+  color: #9aab9d;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  font-size: 10px;
+}
+
+small {
+  color: #87998b;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* Карта */
+
+.map-card {
+  background: #1b221e;
+}
+
+.map-card > h2 {
+  padding: 22px 24px 0;
+  font-weight: 500;
+}
+
+.map-card > .muted {
+  padding: 0 24px;
+  color: #91a195;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.map-card > small {
+  padding: 0 24px 20px;
+  font-size: 10px;
+}
+
+#map {
+  background: #232b25;
+  border-radius: 0;
+  height: clamp(390px, 62vh, 720px);
+}
+
+/* Затемняем только подложку, сохраняя отдельные цвета маршрутов. */
+#map .leaflet-tile-pane {
+  filter:
+    grayscale(1)
+    invert(1)
+    brightness(0.62)
+    contrast(0.85);
+}
+
+#map .leaflet-control-zoom {
+  border: 1px solid #4a574c;
+  border-radius: 9px;
+  box-shadow: 0 3px 12px rgb(0 0 0 / 20%);
+  overflow: hidden;
+}
+
+#map .leaflet-control-zoom a {
+  background: #253128;
+  color: #cedacf;
+  border-color: #48564a;
+  font-weight: 400;
+}
+
+#map .leaflet-control-zoom a:hover {
+  background: #344437;
+}
+
+#map .leaflet-control-attribution {
+  background: rgb(25 33 28 / 90%);
+  color: #93a494;
+  font-size: 9px;
+}
+
+#map .leaflet-control-attribution a {
+  color: #b5c8b5;
+}
+
+#map .leaflet-popup-content-wrapper,
+#map .leaflet-popup-tip {
+  background: #2a362d;
+  color: #e0e8de;
+}
+
+#map .leaflet-popup-content-wrapper {
+  border: 1px solid #4a5c4d;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgb(0 0 0 / 25%);
+}
+
+#map .leaflet-popup-content {
+  font: 12px / 1.7 "Segoe UI", Arial, sans-serif;
+}
+
+#map .leaflet-popup-close-button {
+  color: #bccbbc;
+}
+
+/* Цвета линий текущего map.js */
+#map .leaflet-overlay-pane path[stroke="#2563eb"] {
+  stroke: #acd0b3;
+}
+
+#map .leaflet-overlay-pane path[stroke="#64748b"] {
+  stroke: #728d7a;
+}
+
+#map .leaflet-overlay-pane path[stroke="#f97316"] {
+  stroke: #ddbb83;
+}
+
+#map .leaflet-overlay-pane path[fill="#2563eb"] {
+  fill: #b6d3b9;
+}
+
+#map .leaflet-overlay-pane path[fill="#64748b"] {
+  fill: #829e89;
+}
+
+#map .leaflet-overlay-pane path[fill="#f97316"] {
+  fill: #ddbb83;
+}
+
+#map .leaflet-overlay-pane path[fill="#10b981"] {
+  fill: #84af96;
+}
+
+#map .leaflet-overlay-pane path[stroke="#ffffff"],
+#map .leaflet-overlay-pane path[stroke="#fff"] {
+  stroke: #24352a;
+}
+
+/* Панель груза */
+
+#loading {
+  color: #94a597;
+  font-size: 11px;
+  margin-bottom: 14px;
+}
+
+#shipment {
+  padding: 24px;
+}
+
+#cargo-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #e3eae1;
+  line-height: 1.5;
+}
+
+#cargo-info {
+  color: #a0b0a2;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.badge {
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.badge[data-risk="high"] {
+  color: #d9bb8a;
+  background: #383325;
+}
+
+.badge[data-risk="medium"] {
+  color: #c9bf8a;
+  background: #343527;
+}
+
+.badge[data-risk="low"] {
+  color: #b2ceb5;
+  background: #2a3b2d;
+}
+
+#route {
+  color: #b9c9bb;
+  border-left-color: #54705a;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.metric {
+  border-color: #344036;
+  padding: 16px 0;
+}
+
+.metric h3 {
+  color: #92a696;
+  font-size: 10px;
+  margin-bottom: 7px;
+}
+
+.metric p {
+  color: #d6e2d6;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#arrival {
+  font-size: 19px;
+  font-weight: 500;
+}
+
+#prediction {
+  background: #332f23;
+  color: #dac395;
+  border-left-color: #ba9e67;
+  border-radius: 0 8px 8px 0;
+  padding: 15px;
+  line-height: 1.8;
+  font-size: 12px;
+}
+
+#prediction[data-risk="low"] {
+  background: #28382c;
+  color: #bdd4be;
+  border-left-color: #83a68b;
+}
+
+button {
+  background: #a9c2ae;
+  color: #1d2b22;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 12px 16px;
+}
+
+button:hover {
+  background: #bdd0be;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline-color: #b3c9b4;
+}
+
+#alternative-button {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+#alternative {
+  background: #26352b;
+  border-color: #425a48;
+  border-radius: 10px;
+  padding: 17px;
+}
+
+#alternative h3 {
+  color: #b9d0bd;
+}
+
+#alternative p {
+  color: #cad8cc;
+  line-height: 1.8;
+}
+
+#alternative-assumption {
+  color: #9eb5a4 !important;
+  font-size: 11px !important;
+}
+
+#shipment > small {
+  border-color: #344036;
+  font-size: 10px;
+}
+
+/* Формы и дополнительные вкладки */
+
+label {
+  color: #acbdae;
+  font-size: 12px;
+}
+
+input {
+  background: #18211b;
+  border-color: #425747;
+  color: #e0eade;
+  border-radius: 7px;
+  padding: 12px;
+}
+
+input::placeholder {
+  color: #809685;
+}
+
+#customs-status,
+#ferry-status,
+#history-status,
+#emissions-status {
+  color: #bdcfbf !important;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+#customs-checks li {
+  color: #bdcfbf !important;
+}
+
+#history-list strong {
+  color: #c3d5c4 !important;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+#history-list li {
+  border-color: #344737;
+}
+
+#customs-checks,
+#ferry-details,
+#emissions-details ul,
+#history-list {
+  color: #bdcdbf;
+  font-size: 13px;
+  line-height: 2;
+}
+
+#emissions-details h3 {
+  color: #b9cebc;
+  margin-top: 28px;
+}
+
+#emissions-details > p {
+  color: #c8d7c9;
+  font-size: 13px;
+}
+
+.files-summary {
+  border-color: #344737;
+}
+
+#documents li {
+  background: #253229;
+  border-color: #3b5040;
+  border-radius: 7px;
+}
+
+#documents li[data-provided="true"] {
+  color: #bad1bd;
+}
+
+#documents li[data-provided="false"] {
+  color: #d8bd8e;
+}
+
+.workspace-footer {
+  color: #819184;
+  margin-top: 26px;
+}
+
+/* Панель условий */
+
+.simulation-dialog {
+  background: #1e2821;
+  border-color: #3a4f40;
+  color: #dce6db;
+  box-shadow: -20px 0 80px rgb(0 0 0 / 25%);
+}
+
+.simulation-dialog::backdrop {
+  background: rgb(8 13 10 / 65%);
+  backdrop-filter: blur(3px);
+}
+
+.dialog-top {
+  border-color: #344737;
+  padding: 22px 25px;
+}
+
+.dialog-top button {
+  color: #b5c8b8;
+}
+
+#conditions-form {
+  background: transparent;
+  padding: 28px;
+}
+
+#conditions-form h2 {
+  font-weight: 500;
+}
+
+#conditions-form h3 {
+  color: #a6bea9;
+}
+
+@media (min-width: 1500px) {
+  .work-grid {
+    grid-template-columns: minmax(0, 1fr) 370px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .work-grid {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  h1 {
+    font-size: 23px;
+  }
+
+  .workspace-body {
+    padding-top: 26px;
+  }
+
+  #open-simulation {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  #map {
+    height: 360px;
+  }
+
+  #shipment {
+    padding: 22px;
+  }
+
+  .view-nav {
+    gap: 22px;
+  }
+
+  .view-nav button {
+    font-size: 12px;
+  }
+}
